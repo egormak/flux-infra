@@ -9,5 +9,9 @@ configMapGenerator:
   - name: argocd-values
     files:
       - values.yaml=argocd-values.yaml
+secretGenerator:
+  - name: argocd-secret
+    files:
+      - values.yaml=argocd-secret.yaml
 configurations:
   - kustomizeconfig.yaml
