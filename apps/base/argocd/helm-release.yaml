@@ -29,5 +29,6 @@ spec:
         timeout.reconciliation: 120s
       params:
         server.insecure: true
-  valuesFiles:
-    - argocd-values.yaml
+  valuesFrom:
+    - kind: ConfigMap
+      name: argocd-values

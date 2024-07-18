@@ -4,3 +4,9 @@ resources:
   - helm-repo.yaml
   - helm-release.yaml
   - namespace.yaml
+configMapGenerator:
+  - name: argocd-values
+    files:
+      - values.yaml=argocd-values.yaml
+configurations:
+  - kustomizeconfig.yaml
