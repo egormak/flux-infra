@@ -1,18 +1,15 @@
 server:
-  ingress:
-    # -- Enable an ingress resource for the Argo CD server
-    enabled: true
-    # -- Additional ingress annotations
-    annotations:
-      kubernetes.io/ingress.class: nginx
-
-
+    ingress:
+        # -- Enable an ingress resource for the Argo CD server
+        enabled: true
+        # -- Additional ingress annotations
+        annotations:
+            kubernetes.io/ingress.class: ENC[AES256_GCM,data:OXeYtCM=,iv:A3cZn+nU0blwD/im78NXoUIQVkMYuogt/EBSjO87/gg=,tag:N8+Ee/wCIOxyxVSxdirzHw==,type:str]
 # ####################
 # ## Notifications controller
 # notifications:
 #   # -- Enable notifications controller
 #   enabled: true
-
 #   # -- Configures notification services such as slack, email or custom webhook
 #   # @default -- See [values.yaml]
 #   ## For more information: https://argocd-notifications.readthedocs.io/en/stable/services/overview/
@@ -22,7 +19,6 @@ server:
 #       headers:
 #       - name: Content-Type
 #         value: application/json
-
 #   # -- The notification template is used to generate the notification content
 #   ## For more information: https://argocd-notifications.readthedocs.io/en/stable/templates/
 #   templates:
@@ -76,7 +72,6 @@ server:
 #               "group": "devops",
 #               "message": "<b>service</b>: ArgoCD\n<b>task</b>: create application\n<b>message</b>: Application {{.app.metadata.name}} sync status is 'Unknown'"
 #             }
-
 #   # -- The trigger defines the condition when the notification should be sent
 #   ## For more information: https://argocd-notifications.readthedocs.io/en/stable/triggers/
 #   triggers:
@@ -107,3 +102,23 @@ server:
 #         send:
 #         - app-sync-status-unknown
 #         when: app.status.sync.status == 'Unknown'
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1g8t7npy9fgyh789534rqv5p2n9y0afynd99r0d3mze2lf68ue9cqwl9mgj
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBFZE5GY1dyZVBGcGdsdEdS
+            VWRndFZrd0dNanVXNmdKTnhpOGtRRGFJYmlrCmd6dXVCa3lwbmU0YjlXVzNOUTQ1
+            eEh0eWVhRzRCVDFIZ0srend0UE9kY0UKLS0tIGFvNUU0YnRWTmkrZXhpKytGYlNz
+            ZkhNcmNnbEVjOWU2d09HZGdkcFpEYWMK56fn3xq2dJqv3PbszbSBDY/hMHZogn2u
+            kkdCAuKUYwNyS/hhn6IqOtVM3kEBsI12atDtJ1i2O2VfdF09rUUfvw==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-07-18T19:14:14Z"
+    mac: ENC[AES256_GCM,data:pAxdrdV9GRxIc60ODdI/yswSFiJuCNCnWzh6+AQlqKesojnc2eVOJ30KYWpHu3X0zl33XGVF0wabb84DwxoSXOeROefX+58T8XKWn6Yi/8m8pff3/QFwWMy0m95g9A+NrPZFxYAFt47woxnePwd3vxTnMhYKzIIa0pI1be2y3Yg=,iv:1ryrwLNfSe8I1VhPB0pvYONDtMy/JPKPu5qoLEyF8yA=,tag:8GQ4n8k3hcZULAeEnemJnA==,type:str]
+    pgp: []
+    encrypted_regex: ^(annotations)$
+    version: 3.9.0
