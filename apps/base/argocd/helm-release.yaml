@@ -32,3 +32,5 @@ spec:
   valuesFrom:
     - kind: ConfigMap
       name: argocd-values
+    - kind: Secret
+      name: argocd-secret
