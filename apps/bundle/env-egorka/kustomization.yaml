@@ -4,8 +4,8 @@ resources:
   - ./argocd
   - ../../base/ingress-nginx
   - ../../base/kube-prom-stack
-  - ../../base/metric-server
   - ../../base/limit-range
+  - ../../base/metric-server
   - ../../base/node-local-dns
 patches:
   - path: env-egorka.yaml
