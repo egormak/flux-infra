@@ -22,15 +22,11 @@ spec:
     remediation:
       retries: 3
   # Default values: https://github.com/argoproj/argo-helm/blob/main/charts/argo-cd/values.yaml
-  values:
-    configs:
-      cm:
-        exec.enabled: true
-        timeout.reconciliation: 120s
-      params:
-        server.insecure: true
   valuesFrom:
     - kind: ConfigMap
       name: argocd-values
     - kind: Secret
       name: argocd-secret
+    - kind: Secret
+      name: argocd-secret-env
+      valuesKey: argocd-secret-env
