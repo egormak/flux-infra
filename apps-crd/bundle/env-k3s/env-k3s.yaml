@@ -1,0 +1,9 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: argocd-crd
+  namespace: flux-system
+spec:
+  ref:
+    tag: v2.11.7
