@@ -4,6 +4,7 @@ resources:
   # - ./argocd
   - ../../base/ingress-nginx
   - ../../base/flux-1
+  - ../../base/flux-2
   # - ../../base/kube-prom-stack
   # - ../../base/limit-range
   # - ../../base/metric-server
