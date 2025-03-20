@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   # - ./argocd
   - ../../base/ingress-nginx
+  - ../../base/flux-1
   # - ../../base/kube-prom-stack
   # - ../../base/limit-range
   # - ../../base/metric-server
