@@ -22,5 +22,5 @@ spec:
     kind: GitRepository
     name: ingress-test
   # path: "./"
-  prune: true
+  prune: false
   timeout: 1m
